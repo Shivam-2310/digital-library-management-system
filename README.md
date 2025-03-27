@@ -58,6 +58,54 @@ spring.datasource.password=your_password
 ```bash
 ./mvnw spring-boot:run
 ```
+Here's the Markdown-formatted section for the README.md with Docker instructions:
+
+## 🐳 Using Docker
+
+### Prerequisites
+- Docker
+- Docker Compose
+
+### Docker Deployment Steps
+
+1. Clone the Repository
+```bash
+git clone https://github.com/Shivam-2310/digital-library-management-system.git
+cd library-book-management-system
+```
+
+2. Build and Run with Docker Compose
+```bash
+docker-compose up -d
+```
+
+### Docker Services
+The docker-compose configuration sets up two services:
+* **postgres**: PostgreSQL database
+    * Port: 5432
+    * Database: digital_library
+    * Default credentials:
+        * Username: postgres
+        * Password: root
+* **library-app**: Spring Boot Application
+    * Port: 8080
+    * Automatically connects to the PostgreSQL database
+
+### Stopping the Services
+```bash
+docker-compose down
+```
+
+### Accessing the Application
+* **API Base URL**: `http://localhost:8080/api/books`
+
+### Troubleshooting
+* Ensure Docker and Docker Compose are installed
+* Check docker-compose logs for any connection issues:
+```bash
+docker-compose logs
+```
+
 
 ### Using IDE
 - Open the project in IntelliJ IDEA or Eclipse
